@@ -65,8 +65,8 @@ sh dist_train.sh configs/SimViT/simvit_micro.py 1 --data-path /path/to/imagenet 
 ```
 This should give
 ```
-* Acc@1 79.764 Acc@5 94.950 loss 0.885
-Accuracy of the network on the 50000 test images: 79.8%
+* Acc@1 xx.xxx Acc@5 xx.xxx loss 0.xxx
+Accuracy of the network on the 50000 test images: xx.x%
 ```
 
 ## Training
@@ -84,7 +84,7 @@ python get_flops.py simvit_micro
 This should give
 ```
 Input shape: (3, 224, 224)
-Flops: 4.04 GFLOPs
-Params: 25.36 M
+Flops: x.xx GFLOPs
+Params: xx.xx M
 ```
 
