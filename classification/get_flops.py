@@ -13,7 +13,7 @@ except ImportError:
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Get FLOPS of a classification model')
-    parser.add_argument('model', default='capt_micro', help='train config file path')
+    parser.add_argument('model', default='simvit_micro', help='train config file path')
     parser.add_argument(
         '--shape',
         type=int,
