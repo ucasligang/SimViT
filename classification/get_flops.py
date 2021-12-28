@@ -2,7 +2,7 @@ import argparse
 import torch
 from timm.models import create_model
 
-import capt_new
+import simvit
 
 try:
     from mmcv.cnn import get_model_complexity_info
@@ -38,7 +38,7 @@ def center_attention_flops(h, w, dim):
 def get_flops(model, input_shape):
     # flops, params = get_model_complexity_info(model, input_shape, as_strings=False) by Gang Li
     flops, _ = get_model_complexity_info(model, input_shape, as_strings=False)
-    if 'capt' in model.name: # calculate flops of PVTv2_li
+    if 'simvit' in model.name: # calculate flops of simvit
         _, H, W = input_shape
         stage1 = center_attention_flops(H // 4, W // 4,
                               model.block1[0].attn.in_channels) * len(model.block1)
