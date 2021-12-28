@@ -1,3 +1,3 @@
 # SimViT
 This is a official repository of SimViT.
-We will open source our code soon.
+We will open our models soon.
