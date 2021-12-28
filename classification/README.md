@@ -84,7 +84,7 @@ python get_flops.py simvit_micro
 This should give
 ```
 Input shape: (3, 224, 224)
-Flops: x.xx GFLOPs
-Params: xx.xx M
+Flops: 0.65 GFLOPs
+Params: 3.33 M
 ```
 
