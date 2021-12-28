@@ -1,6 +1,6 @@
 # SimViT
 This is a official repository of SimViT.
-We will open our models soon.
+We will open our models and codes about object detection and semantic segmentation soon.
 Our code references the [PVT](https://github.com/whai362/PVT), thanks a lot for their outstanding work!
 ## Citation
 If you use this code for a paper, please cite:
