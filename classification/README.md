@@ -59,7 +59,7 @@ The directory structure is the standard layout for the torchvision [`datasets.Im
 We will open our models soon.
 
 ## Evaluation
-To evaluate a pre-trained PVT-Small on ImageNet val with a single GPU run:
+To evaluate a pre-trained SimViT-micro on ImageNet val with a single GPU run:
 ```
 sh dist_train.sh configs/SimViT/simvit_micro.py 1 --data-path /path/to/imagenet --resume /path/to/checkpoint_file --eval
 ```
@@ -70,7 +70,7 @@ Accuracy of the network on the 50000 test images: xx.x%
 ```
 
 ## Training
-To train PVT-Small on ImageNet on a single node with 8 gpus for 300 epochs run:
+To train SimViT-micro on ImageNet on a single node with 8 gpus for 300 epochs run:
 
 ```
 sh dist_train.sh configs/SimViT/simvit_micro.py 8 --data-path /path/to/imagenet
