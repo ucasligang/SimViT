@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding=utf-8
 '''
- * @File    :  capt_v2.py
+ * @File    :  simvit.py
  * @Version :  2.0
- * @Desc    :  CAPT version 2
+ * @Desc    :  simvit version 2
 '''
 
 import torch
@@ -430,7 +430,7 @@ class PatchEmbed(nn.Module):
         return x, H, W
 
 
-class CenterAttentionPyramidTransformer(nn.Module):
+class simvit(nn.Module):
     def __init__(self, img_size=224, in_chans=3, num_classes=1000, embed_dims=[64, 128, 256, 512],
                  num_heads=[1, 2, 4, 8], mlp_ratios=[4, 4, 4, 4], qkv_bias=False, qk_scale=None, drop_rate=0.,
                  attn_drop_rate=0., drop_path_rate=0., norm_layer=nn.LayerNorm,
@@ -486,7 +486,7 @@ class CenterAttentionPyramidTransformer(nn.Module):
 
     @torch.jit.ignore
     def no_weight_decay(self):
-        return {'pos_embed1', 'pos_embed2', 'pos_embed3', 'pos_embed4', 'cls_token'}  # has pos_embed may be better
+        return {'pos_embed1', 'pos_embed2', 'pos_embed3', 'pos_embed4', 'cls_token'}  
 
     def get_classifier(self):
         return self.head
@@ -544,8 +544,8 @@ def _conv_filter(state_dict, patch_size=16):
 
 
 @register_model
-def capt_micro(pretrained=False, **kwargs):        # source:3.4M 0.6G  ours:3.33M 0.65G  192.168.20.6
-    model = CenterAttentionPyramidTransformer(
+def simvit_micro(pretrained=False, **kwargs):        # source:3.4M 0.6G  ours:3.33M 0.65G  192.168.20.6
+    model = simvit(
         embed_dims=[32, 64, 160, 256], num_heads=[1, 2, 5, 8], mlp_ratios=[8, 8, 4, 4], qkv_bias=True,
         norm_layer=partial(nn.LayerNorm, eps=1e-6), depths=[2, 3, 3, 2], **kwargs)
     model.default_cfg = _cfg()
@@ -553,35 +553,18 @@ def capt_micro(pretrained=False, **kwargs):        # source:3.4M 0.6G  ours:3.33
     return model
 
 @register_model
-def capt_tiny(pretrained=False, **kwargs):          # source:13.1M 2.1G ours:12.99M 2.51G  192.168.20.7
-    model = CenterAttentionPyramidTransformer(
+def simvit_tiny(pretrained=False, **kwargs):          # source:13.1M 2.1G ours:12.99M 2.51G  192.168.20.7
+    model = simvit(
         embed_dims=[64, 128, 320, 512], num_heads=[1, 2, 5, 8], mlp_ratios=[8, 8, 4, 4], qkv_bias=True,
         norm_layer=partial(nn.LayerNorm, eps=1e-6), depths=[2, 4, 3, 2], **kwargs)
     model.default_cfg = _cfg()
 
     return model
 
-@register_model
-def capt_tiny_ablation(pretrained=False, **kwargs):          # source:13.1M 2.1G ours:12.99M 2.51G  192.168.20.7
-    model = CenterAttentionPyramidTransformer(
-        embed_dims=[64, 128, 320, 512], num_heads=[1, 2, 5, 8], mlp_ratios=[8, 8, 4, 4], qkv_bias=True,
-        norm_layer=partial(nn.LayerNorm, eps=1e-6), depths=[2, 2, 2, 2], **kwargs)
-    model.default_cfg = _cfg()
-
-    return model
-
-# @register_model              # 程星
-# def capt_small(pretrained=False, **kwargs):         # source:25.4M 4.0G  ours:25.09M 5.75G   程星
-#     model = CenterAttentionPyramidTransformer(
-#         embed_dims=[64, 128, 320, 512], num_heads=[1, 2, 5, 8], mlp_ratios=[8, 8, 4, 4], qkv_bias=True,
-#         norm_layer=partial(nn.LayerNorm, eps=1e-6), depths=[3, 8, 9, 3], **kwargs)
-#     model.default_cfg = _cfg()
-#
-#     return model
 
 @register_model
-def capt_small(pretrained=False, **kwargs):         # source:25.4M 4.0G  ours:29.39M 6.19G      郑贺亮
-    model = CenterAttentionPyramidTransformer(
+def simvit_small(pretrained=False, **kwargs):       
+    model = simvit(
         embed_dims=[64, 128, 320, 512], num_heads=[1, 2, 5, 8], mlp_ratios=[8, 8, 4, 4], qkv_bias=True,
         norm_layer=partial(nn.LayerNorm, eps=1e-6), depths=[3, 6, 13, 3], **kwargs)
     model.default_cfg = _cfg()
@@ -589,47 +572,26 @@ def capt_small(pretrained=False, **kwargs):         # source:25.4M 4.0G  ours:29
     return model
 
 
-# @register_model
-# def capt_small(pretrained=False, **kwargs):         # source:25.4M 4.0G  ours:25.09M/5.75G       程星之前
-#     model = CenterAttentionPyramidTransformer(
-#         embed_dims=[64, 128, 320, 512], num_heads=[1, 2, 5, 8], mlp_ratios=[8, 8, 4, 4], qkv_bias=True,
-#         norm_layer=partial(nn.LayerNorm, eps=1e-6), depths=[3, 8, 9, 3], **kwargs)
-#     model.default_cfg = _cfg()
-#
-#     return model
-
-
-# @register_model
-# def capt_medium(pretrained=False, **kwargs):         # source:45.2M 6.9G ours:45.0 M 9.66G       程星之前
-#     model = CenterAttentionPyramidTransformer(
-#         embed_dims=[64, 128, 320, 512], num_heads=[1, 2, 5, 8], mlp_ratios=[8, 8, 4, 4], qkv_bias=True,
-#         norm_layer=partial(nn.LayerNorm, eps=1e-6), depths=[3, 8, 25, 3], **kwargs)
-#     model.default_cfg = _cfg()
-#
-#     return model
-
 @register_model
-def capt_medium(pretrained=False, **kwargs):         # source:45.2M 6.9G ours:51.3 M 10.9G         # 程星目前
-    model = CenterAttentionPyramidTransformer(
+def simvit_medium(pretrained=False, **kwargs):         # 51.3 M 10.9G   
+    model = simvit(
         embed_dims=[64, 128, 320, 512], num_heads=[1, 2, 5, 8], mlp_ratios=[8, 8, 4, 4], qkv_bias=True,
         norm_layer=partial(nn.LayerNorm, eps=1e-6), depths=[3, 8, 30, 3], **kwargs)
     model.default_cfg = _cfg()
     return model
 
-
 @register_model
-def capt_large(pretrained=False, **kwargs):           # source:62.6M 10.1G ours:62.51M 12.15 G
-    model = CenterAttentionPyramidTransformer(
+def simvit_large(pretrained=False, **kwargs):           # 62.51M 12.15 G
+    model = simvit(
         embed_dims=[64, 128, 320, 512], num_heads=[1, 2, 5, 8], mlp_ratios=[4, 4, 4, 4], qkv_bias=True,
         norm_layer=partial(nn.LayerNorm, eps=1e-6), depths=[3, 8, 40, 3], **kwargs)
     model.default_cfg = _cfg()
 
     return model
 
-
 @register_model
-def capt_huge(pretrained=False, **kwargs):             # ours:90.73M 18.17 G
-    model = CenterAttentionPyramidTransformer(
+def simvit_huge(pretrained=False, **kwargs):             # 90.73M 18.17 G
+    model = simvit(
         embed_dims=[64, 128, 320, 512], num_heads=[1, 2, 5, 8], mlp_ratios=[4, 4, 4, 4], qkv_bias=True,
         norm_layer=partial(nn.LayerNorm, eps=1e-6), depths=[3, 12, 62, 3], **kwargs)
     model.default_cfg = _cfg()
@@ -637,10 +599,8 @@ def capt_huge(pretrained=False, **kwargs):             # ours:90.73M 18.17 G
     return model
 
 
-
-
 if __name__ == '__main__':
-    model = CenterAttentionPyramidTransformer(
+    model = simvit(
         embed_dims=[32, 64, 160, 256], num_heads=[1, 2, 5, 8], mlp_ratios=[8, 8, 4, 4], qkv_bias=True,
         norm_layer=partial(nn.LayerNorm, eps=1e-6), depths=[2, 2, 2, 2])
     model = nn.DataParallel(model, device_ids=[0, 1, 2, 3])
