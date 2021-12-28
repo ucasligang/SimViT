@@ -220,7 +220,6 @@ class CenterAttention(nn.Module):
         self.qkv_bias = qkv_bias
         self.q_proj = nn.Linear(dim, dim, bias=qkv_bias)
         self.kv_proj = nn.Linear(dim, dim * 2, bias=qkv_bias)
-        print(dim)
         self.attn_drop = nn.Dropout(attn_drop)
         self.softmax = nn.Softmax(dim=-1)
         self.proj = nn.Linear(dim, dim)
