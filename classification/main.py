@@ -21,15 +21,7 @@ from datasets import build_dataset
 from engine import train_one_epoch, evaluate
 from losses import DistillationLoss
 from samplers import RASampler
-# import models
-# import capt
-# import capt_v2_overlap
-# import capt_v2_avg_pool
-# import capt_v2_max_pool
-# import capt_v2_max_pool_overlapEmbed
-# import capt_v2_max_pool_laststage_fullAttention
-import capt_new
-# import capt_new_ablation_max_pooling
+import simvit
 import utils
 import collections
 
