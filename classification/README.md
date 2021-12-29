@@ -59,9 +59,9 @@ The directory structure is the standard layout for the torchvision [`datasets.Im
 We will open our models soon.
 
 ## Evaluation
-To evaluate a pre-trained SimViT-micro on ImageNet val with a single GPU run:
+To evaluate a pre-trained SimViT-micro on ImageNet val with a 4 GPUs run:
 ```
-sh dist_train.sh configs/SimViT/simvit_micro.py 1 --data-path /path/to/imagenet --resume /path/to/checkpoint_file --eval
+sh dist_eval.sh configs/SimViT/simvit_micro.py 4 /path/to/imagenet /path/to/checkpoint_file
 ```
 This should give
 ```
