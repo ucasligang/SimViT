@@ -65,8 +65,8 @@ sh dist_train.sh configs/SimViT/simvit_micro.py 1 --data-path /path/to/imagenet 
 ```
 This should give
 ```
-* Acc@1 xx.xxx Acc@5 xx.xxx loss 0.xxx
-Accuracy of the network on the 50000 test images: xx.x%
+* Acc@1 71.118 Acc@5 90.516 loss 1.297
+Accuracy of the network on the 50000 test images: 71.1%
 ```
 
 ## Training
