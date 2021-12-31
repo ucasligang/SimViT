@@ -64,6 +64,8 @@ The directory structure is the standard layout for the torchvision [`datasets.Im
 |------------------|:----:|:-----:|:-----------:|------------------------------------------|--------------------------------------------------------------------------------------------|
 | SimViT-micro        |  224 |  71.1 |     3.3     | [config](configs/SimViT/simvit_micro.py)    | 12.7M [[Google]](https://drive.google.com/file/d/1JucCdOSu4oQoojqpk062LyQerSB7JC-U/view?usp=sharing)  |
 
+| SimViT-tiny        |  224 |  79.3 |    13.0     | [config](configs/SimViT/simvit_tiny.py)    | 49.6M [[Google]](https://drive.google.com/file/d/1Ges034MGPauqCMwp7Ivv6RY5cQTQB2yB/view?usp=sharing)  |
+
 ## Evaluation
 To evaluate a pre-trained SimViT-micro on ImageNet val with a 4 GPUs run:
 ```
