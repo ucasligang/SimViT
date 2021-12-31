@@ -59,7 +59,6 @@ The directory structure is the standard layout for the torchvision [`datasets.Im
       img4.jpeg
 ```
 
-## Model Zoo
 
 ## Model Zoo
 
