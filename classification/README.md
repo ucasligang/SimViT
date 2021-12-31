@@ -34,10 +34,8 @@ conda create -n simvit python=3.7
 ```
 
 Then, install PyTorch 1.6.0+ and torchvision 0.7.0+ and [pytorch-image-models 0.3.2](https://github.com/rwightman/pytorch-image-models):
-
+Then, install all dependencies:
 ```
-conda install -c pytorch pytorch torchvision
-pip install timm==0.3.2
 pip install -r requirements.txt
 ```
 
