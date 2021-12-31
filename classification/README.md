@@ -38,6 +38,7 @@ Then, install PyTorch 1.6.0+ and torchvision 0.7.0+ and [pytorch-image-models 0.
 ```
 conda install -c pytorch pytorch torchvision
 pip install timm==0.3.2
+pip install -r requirements.txt
 ```
 
 ## Data preparation
