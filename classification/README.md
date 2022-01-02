@@ -84,7 +84,7 @@ Accuracy of the network on the 50000 test images: 71.1%
 To train SimViT-micro on ImageNet on a single node with 8 gpus for 300 epochs run:
 
 ```
-sh dist_train.sh configs/SimViT/simvit_micro.py 8 --data-path /path/to/imagenet
+sh dist_train.sh configs/SimViT/simvit_micro.py 4 /path/to/imagenet /path/to/checkpoint_file
 ```
 
 ## Calculating FLOPS & Params
