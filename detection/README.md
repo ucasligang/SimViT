@@ -59,11 +59,11 @@ Prepare COCO according to the guidelines in [MMDetection v2.13.0](https://github
 - SimViT on COCO
 
 
-| Method     | Backbone | Pretrain    | Lr schd | Aug | box AP | mask AP | Config                                               | Download |
-|------------|----------|-------------|:-------:|:---:|:------:|:-------:|------------------------------------------------------|----------|
-| RetinaNet  | SimViT-Small | ImageNet-1K |    1x   |  No |  37.2  |    -    | [config](configs/tmp/retinanet_pvt_v2_b0_fpn_1x_coco.py) | [log](https://drive.google.com/file/d/1190iSH3oas_71DPEVjMK9JTn59RYdF3T/view?usp=sharing) & [model](https://drive.google.com/file/d/1K6OkU3CYVglnLSDSvsY8HpDcISB6eKzM/view?usp=sharing) |
-| ATSS| SimViT-Small | ImageNet-1K |    1x   |  No |  47.5  |   42.7  | [config](configs/tmp/mask_rcnn_pvt_v2_b4_fpn_1x_coco.py) | [log](https://drive.google.com/file/d/1FVWU1ohn19DBOuCZPb8A9DFfrMa5yYm2/view?usp=sharing) & [model](https://drive.google.com/file/d/1IpdgEHAe3XNlIldk6drzOWRcE-wFCv7v/view?usp=sharing) |
-|GFL | SimViT-Small | ImageNet-1K |    1x   |  No |  47.4  |   42.5  | [config](configs/tmp/mask_rcnn_pvt_v2_b5_fpn_1x_coco.py) | [log](https://drive.google.com/file/d/19LN-8TWsrVKsF5aBzXiqKva5mQrAusDw/view?usp=sharing) & [model](https://drive.google.com/file/d/1BvI5XXaGbv3tbLrXbVQ5K45gFVEHbBGX/view?usp=sharing) |
+| Method     | Backbone | Pretrain    | Lr schd | Aug | box AP | Config                                               | Download |
+|------------|----------|-------------|:-------:|:---:|:------:|------------------------------------------------------|----------|
+| RetinaNet  | SimViT-Small | ImageNet-1K |    1x   |  No |  46.3 |  [config](configs/tmp/retinanet_pvt_v2_b0_fpn_1x_coco.py) | [log](https://drive.google.com/file/d/1190iSH3oas_71DPEVjMK9JTn59RYdF3T/view?usp=sharing) & [model](https://drive.google.com/file/d/1K6OkU3CYVglnLSDSvsY8HpDcISB6eKzM/view?usp=sharing) |
+| ATSS| SimViT-Small | ImageNet-1K |    1x   |  No | 49.6  | [config](configs/tmp/mask_rcnn_pvt_v2_b4_fpn_1x_coco.py) | [log](https://drive.google.com/file/d/1FVWU1ohn19DBOuCZPb8A9DFfrMa5yYm2/view?usp=sharing) & [model](https://drive.google.com/file/d/1IpdgEHAe3XNlIldk6drzOWRcE-wFCv7v/view?usp=sharing) |
+|GFL | SimViT-Small | ImageNet-1K |    1x   |  No |  49.9 | [config](configs/tmp/mask_rcnn_pvt_v2_b5_fpn_1x_coco.py) | [log](https://drive.google.com/file/d/19LN-8TWsrVKsF5aBzXiqKva5mQrAusDw/view?usp=sharing) & [model](https://drive.google.com/file/d/1BvI5XXaGbv3tbLrXbVQ5K45gFVEHbBGX/view?usp=sharing) |
 
 
 
