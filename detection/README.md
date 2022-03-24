@@ -59,11 +59,11 @@ Prepare COCO according to the guidelines in [MMDetection v2.13.0](https://github
 - SimViT on COCO
 
 
-| Method     | Backbone | Pretrain    | Lr schd | Aug | box AP | Config                                               | Download |
+| Method     | Backbone | Pretrain    | Lr schd  | box AP | Config                                               | Download |
 |------------|----------|-------------|:-------:|:---:|:------:|------------------------------------------------------|----------|
-| RetinaNet  | SimViT-Small | ImageNet-1K |    3x   |  No |  46.3 |  [config](configs/tmp/retinanet_capt_small_fpn_3x_mstrin_fp16.py) | [log](https://drive.google.com/file/d/1TgvtKdYfWlMZgH_WJeiUFEdEiuXMgJVW/view?usp=sharing) & [model](https://drive.google.com/file/d/1JUg1aa40AsE6rTuN7uZ5YouUX3NCAsnN/view?usp=sharing) |
-| ATSS| SimViT-Small | ImageNet-1K |    3x   |  No | 49.6  | [config](configs/tmp/atss_simvit_small_fpn_3x_mstrain_fp16_coco.py) | [log](https://drive.google.com/file/d/1WhOL4_QgEv5QFnziqow3ntvW44uol5mE/view?usp=sharing) & [model](https://drive.google.com/file/d/1TgSz2516yJUdYTiEM4VQSxv9rZt1VtEa/view?usp=sharing) |
-|GFL | SimViT-Small | ImageNet-1K |    3x   |  No |  49.9 | [config](configs/tmp/gfl_capt_small_fpn_3x_mstrain_fp16.py) | [log](https://drive.google.com/file/d/10IdeyRhK3wq0b1lrOsT2QbxofB_JHlwC/view?usp=sharing) & [model](https://drive.google.com/file/d/16VFQT59XuJhLL0VBw2Za_pUMDHK8zPlr/view?usp=sharing) |
+| RetinaNet  | SimViT-Small | ImageNet-1K |    3x  |  46.3 |  [config](configs/tmp/retinanet_capt_small_fpn_3x_mstrin_fp16.py) | [log](https://drive.google.com/file/d/1TgvtKdYfWlMZgH_WJeiUFEdEiuXMgJVW/view?usp=sharing) & [model](https://drive.google.com/file/d/1JUg1aa40AsE6rTuN7uZ5YouUX3NCAsnN/view?usp=sharing) |
+| ATSS| SimViT-Small | ImageNet-1K |    3x   |  49.6  | [config](configs/tmp/atss_simvit_small_fpn_3x_mstrain_fp16_coco.py) | [log](https://drive.google.com/file/d/1WhOL4_QgEv5QFnziqow3ntvW44uol5mE/view?usp=sharing) & [model](https://drive.google.com/file/d/1TgSz2516yJUdYTiEM4VQSxv9rZt1VtEa/view?usp=sharing) |
+|GFL | SimViT-Small | ImageNet-1K |    3x   |  49.9 | [config](configs/tmp/gfl_capt_small_fpn_3x_mstrain_fp16.py) | [log](https://drive.google.com/file/d/10IdeyRhK3wq0b1lrOsT2QbxofB_JHlwC/view?usp=sharing) & [model](https://drive.google.com/file/d/16VFQT59XuJhLL0VBw2Za_pUMDHK8zPlr/view?usp=sharing) |
 
 
 
