@@ -70,7 +70,7 @@ Prepare COCO according to the guidelines in [MMDetection v2.13.0](https://github
 ## Evaluation
 To evaluate PVT-Small + RetinaNet (640x) on COCO val2017 on a single node with 8 gpus run:
 ```
-dist_test.sh configs/retinanet_pvt_s_fpn_1x_coco_640.py /path/to/checkpoint_file 8 --out results.pkl --eval bbox
+dist_test.sh configs/retinanet_capt_small_fpn_3x_mstrin_fp16.py /path/to/checkpoint_file 8 --out results.pkl --eval bbox
 ```
 This should give
 ```
@@ -89,10 +89,10 @@ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.721
 ```
 
 ## Training
-To train PVT-Small + RetinaNet (640x) on COCO train2017 on a single node with 8 gpus for 12 epochs run:
+To train PVT-Small + RetinaNet (640x) on COCO train2017 on a single node with 8 gpus for 36 epochs run:
 
 ```
-dist_train.sh configs/retinanet_pvt_s_fpn_1x_coco_640.py 8
+dist_train.sh configs/retinanet_capt_small_fpn_3x_mstrin_fp16.py 8
 ```
 
 ## Demo
