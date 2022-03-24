@@ -1,34 +1,23 @@
-# Applying PVT to Object Detection
+# Applying SimViT to Object Detection
 
-Our detection code is developed on top of [MMDetection v2.13.0](https://github.com/open-mmlab/mmdetection/tree/v2.13.0).
+Our detection code is developed on top of [MMDetection v2.13.0](https://github.com/open-mmlab/mmdetection/tree/v2.13.0) and [PVT](https://github.com/whai362/PVT).
 
-For details see [Pyramid Vision Transformer: A Versatile Backbone for Dense Prediction without Convolutions](https://arxiv.org/pdf/2102.12122.pdf). 
+For details see [SimViT: Exploring a Simple Vision Transformer with sliding windows](https://arxiv.org/pdf/2112.13085.pdf). 
 
 If you use this code for a paper please cite:
 
-PVTv1
+SimViT
 ```
-@misc{wang2021pyramid,
-      title={Pyramid Vision Transformer: A Versatile Backbone for Dense Prediction without Convolutions}, 
-      author={Wenhai Wang and Enze Xie and Xiang Li and Deng-Ping Fan and Kaitao Song and Ding Liang and Tong Lu and Ping Luo and Ling Shao},
+@misc{li2021simvit,
+      title={SimViT: Exploring a Simple Vision Transformer with sliding windows}, 
+      author={Gang Li and Di Xu and Xing Cheng and Lingyu Si and Changwen Zheng},
       year={2021},
-      eprint={2102.12122},
+      eprint={2112.13085},
       archivePrefix={arXiv},
       primaryClass={cs.CV}
 }
 ```
 
-PVTv2
-```
-@misc{wang2021pvtv2,
-      title={PVTv2: Improved Baselines with Pyramid Vision Transformer}, 
-      author={Wenhai Wang and Enze Xie and Xiang Li and Deng-Ping Fan and Kaitao Song and Ding Liang and Tong Lu and Ping Luo and Ling Shao},
-      year={2021},
-      eprint={2106.13797},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
-}
-```
 
 ## Usage
 
@@ -67,7 +56,7 @@ Prepare COCO according to the guidelines in [MMDetection v2.13.0](https://github
 
 ## Results and models
 
-- PVTv2 on COCO
+- SimViT on COCO
 
 
 | Method     | Backbone | Pretrain    | Lr schd | Aug | box AP | mask AP | Config                                               | Download |
@@ -87,32 +76,6 @@ Prepare COCO according to the guidelines in [MMDetection v2.13.0](https://github
 | Mask R-CNN | PVTv2-b4 | ImageNet-1K |    1x   |  No |  47.5  |   42.7  | [config](configs/tmp/mask_rcnn_pvt_v2_b4_fpn_1x_coco.py) | [log](https://drive.google.com/file/d/1FVWU1ohn19DBOuCZPb8A9DFfrMa5yYm2/view?usp=sharing) & [model](https://drive.google.com/file/d/1IpdgEHAe3XNlIldk6drzOWRcE-wFCv7v/view?usp=sharing) |
 | Mask R-CNN | PVTv2-b5 | ImageNet-1K |    1x   |  No |  47.4  |   42.5  | [config](configs/tmp/mask_rcnn_pvt_v2_b5_fpn_1x_coco.py) | [log](https://drive.google.com/file/d/19LN-8TWsrVKsF5aBzXiqKva5mQrAusDw/view?usp=sharing) & [model](https://drive.google.com/file/d/1BvI5XXaGbv3tbLrXbVQ5K45gFVEHbBGX/view?usp=sharing) |
 
-
-| Method        | Backbone        | Pretrain    | Lr schd | Aug | box AP | mask AP | Config     | Download |
-|---------------|-----------------|-------------|:-------:|:---:|:------:|:-------:|------------|----------|
-| Cascade Mask R-CNN | PVTv2-b2-Linear | ImageNet-1K |    3x   | Yes |  50.9  |    44.0    | [config](configs/tmp/cascade_mask_rcnn_pvt_v2_b2_li_fpn_3x_mstrain_fp16.py) | [log](https://drive.google.com/file/d/1X_DC4yd89t4MJjQt9XmuCwx1hRmklN3z/view?usp=sharing) & [model](https://drive.google.com/file/d/1dG4O-M0EqKYdTtZqJdRjJopiwwnoakee/view?usp=sharing)    |
-| Cascade Mask R-CNN | PVTv2-b2        | ImageNet-1K |    3x   | Yes |  51.1  |    44.4    | [config](configs/tmp/cascade_mask_rcnn_pvt_v2_b2_fpn_3x_mstrain_fp16.py) | [log](https://drive.google.com/file/d/1gKEa_lUvm3Okonk33wgUjzfzVijEch-2/view?usp=sharing) & [model](https://drive.google.com/file/d/11jmqwLQSqQ1zin9D2sRYqeC8YfzGaN3V/view?usp=sharing) |
-| ATSS          | PVTv2-b2-Linear | ImageNet-1K |    3x   | Yes |  48.9  |    -    | [config](configs/tmp/atss_pvt_v2_b2_li_fpn_3x_mstrain_fp16.py) | [log](https://drive.google.com/file/d/1pg2O6gC5zKvFnAuC98wsexcx7mAqmv16/view?usp=sharing) & [model](https://drive.google.com/file/d/1CB4teTBwOpofCrHM91QvKKFLKcVMzZVi/view?usp=sharing)   |
-| ATSS          | PVTv2-b2        | ImageNet-1K |    3x   | Yes |  49.9  |    -    | [config](configs/tmp/atss_pvt_v2_b2_fpn_3x_mstrain_fp16.py) | [log](https://drive.google.com/file/d/1Vnf8-BszhTEkOQqwLA2-XLeuMT9n5ceR/view?usp=sharing) & [model](https://drive.google.com/file/d/1TKbj-i7oLgC7zstFuV0Neumu4iKMpBGh/view?usp=sharing)    |
-| GFL           | PVTv2-b2-Linear | ImageNet-1K |    3x   | Yes |  49.2  |    -    | [config](configs/tmp/gfl_pvt_v2_b2_li_fpn_3x_mstrain_fp16.py) | [log](https://drive.google.com/file/d/1hqieuwCe79HAVMMVz8sEZsnG-R74Z_AO/view?usp=sharing) & [model](https://drive.google.com/file/d/1CnXlOEs9g7-LAoaDFcukTh5x0R4popZp/view?usp=sharing)    |
-| GFL           | PVTv2-b2        | ImageNet-1K |    3x   | Yes |  50.2  |    -    | [config](configs/tmp/gfl_pvt_v2_b2_fpn_3x_mstrain_fp16.py) | [log](https://drive.google.com/file/d/1AEMecyBnsomn4bxj1ySMxFdCsi8KCzGT/view?usp=sharing) & [model](https://drive.google.com/file/d/1XODtTQ3UAQz75vqhXBddqn7JpQke0vn6/view?usp=sharing) |
-| Sparse R-CNN  | PVTv2-b2-Linear | ImageNet-1K |    3x   | Yes |  48.9  |    -    | [config](configs/tmp/sparse_rcnn_pvt_v2_b2_li_fpn_300_proposals_crop_mstrain_480-800_3x_coco.py) | [log](https://drive.google.com/file/d/1uVHEwr5FDqlL3UvstpncCuaClU54lig6/view?usp=sharing) & [model](https://drive.google.com/file/d/1W8Wt2WbyhEi0JOUblaEcH9gx0I6z1wAv/view?usp=sharing) |
-| Sparse R-CNN  | PVTv2-b2        | ImageNet-1K |    3x   | Yes |  50.1  |    -    | [config](configs/tmp/sparse_rcnn_pvt_v2_b2_fpn_300_proposals_crop_mstrain_480-800_3x_coco.py) | [log](https://drive.google.com/file/d/1hDJwwICMmFqqF0A2Z35uNR6C5nI-2m22/view?usp=sharing) & [model](https://drive.google.com/file/d/1xtn-wD_nYSwudF1SqsSHl7opEXM4dhPN/view?usp=sharing)    |
-
-- PVTv1 on COCO
-
-| Method           | Backbone  | Pretrain    | Lr schd | box AP | mask AP | Config                                               | Download                                                                                    |
-|------------------|-----------|-------------|:-------:|:------:|:-------:|------------------------------------------------------|---------------------------------------------------------------------------------------------|
-| RetinaNet        | PVT-Tiny  | ImageNet-1K |    1x   |  36.7  |    -    | [config](configs/tmp/retinanet_pvt_t_fpn_1x_coco.py)     | [log](https://drive.google.com/file/d/1w5giZkGZ0raFnl6TE8V7G3vbFoeRDqWC/view?usp=sharing) & [model](https://drive.google.com/file/d/1ZbS-g3oqAChkYiDYTiZLzw61lal2pgbl/view?usp=sharing) |
-| RetinaNet (640x) | PVT-Small | ImageNet-1K |    1x   |  38.7  |    -    | [config](configs/tmp/retinanet_pvt_s_fpn_1x_coco_640.py) | [log](https://drive.google.com/file/d/1lkDW5jmUz9YwED4BNiUYFSi9bkcAB36y/view?usp=sharing) & [model](https://drive.google.com/file/d/1L5wh2rYsVnuC_CEeFE6yMhU1kENt2gnk/view?usp=sharing) |
-| RetinaNet (800x) | PVT-Small | ImageNet-1K |    1x   |  40.4  |    -    | [config](configs/tmp/retinanet_pvt_s_fpn_1x_coco.py)     | log & [model](https://drive.google.com/file/d/1U02ngyT_IYxS8SlU3WXf5r0TFsoBE3Lm/view?usp=sharing) |
-| RetinaNet        | PVT-Medium  | ImageNet-1K |    1x   |  41.9  |    -    | [config](configs/tmp/retinanet_pvt_m_fpn_1x_coco.py)     | [log](https://drive.google.com/file/d/1sbHtmaFoQvbjE881MqmgOw1QtwrD2MVF/view?usp=sharing) & [model](https://drive.google.com/file/d/1DJCmbrpLJhQi20ztSCmtruDaXtqOsrns/view?usp=sharing) |
-| RetinaNet        | PVT-Large  | ImageNet-1K |    1x   |  42.6  |    -    | [config](configs/tmp/retinanet_pvt_l_fpn_1x_coco.py)     | [log](https://drive.google.com/file/d/1PjvUY1tRZ7Qhdtx1MQ9J0lPMRZgV3x1n/view?usp=sharing) & [model](https://drive.google.com/file/d/1zG_Ji_GamjQgPbe6hHOjZlIHs5jZbVFL/view?usp=sharing) |
-| Mask R-CNN        | PVT-Tiny  | ImageNet-1K |    1x   |  36.7  |   35.1  | [config](configs/tmp/mask_rcnn_pvt_t_fpn_1x_coco.py)     | [log](https://drive.google.com/file/d/1PE__Sp2tgKIYkJaUa0V8q-GSxyLkcWke/view?usp=sharing) & [model](https://drive.google.com/file/d/1JGcl7ZnDIf-qQjrCXVtb71XeRWOIu7Xf/view?usp=sharing) |
-| Mask R-CNN        | PVT-Small | ImageNet-1K |    1x   |  40.4  |   37.8  | [config](configs/tmp/mask_rcnn_pvt_s_fpn_1x_coco.py)     | [log](https://drive.google.com/file/d/1qrP563Tv_Xc-gMDlX6cXiyhLpM0Yi_iN/view?usp=sharing) & [model](https://drive.google.com/file/d/1XGJQTivM_KviRDVvKTPgkJQhFco2oXSA/view?usp=sharing) |
-| Mask R-CNN        | PVT-Medium | ImageNet-1K |    1x   |  42.0  |   39.0  | [config](configs/tmp/mask_rcnn_pvt_m_fpn_1x_coco.py)     | [log](https://drive.google.com/file/d/1773WWorAkeh5mVvvbJoqewAB4W0qa8yb/view?usp=sharing) & [model](https://drive.google.com/file/d/1m0TFlJOVSLaAA4alVqp_VRckg0uRGTJ-/view?usp=sharing) |
-| Mask R-CNN        | PVT-Large | ImageNet-1K |    1x   |  42.9  |   39.5  | [config](configs/tmp/mask_rcnn_pvt_l_fpn_1x_coco.py)     | [log](https://drive.google.com/file/d/1PjvUY1tRZ7Qhdtx1MQ9J0lPMRZgV3x1n/view?usp=sharing) & [model](https://drive.google.com/file/d/1zG_Ji_GamjQgPbe6hHOjZlIHs5jZbVFL/view?usp=sharing) |
-| DETR             | PVT-Small | ImageNet-1K |   50ep  |  34.7  |    -    | [config](configs/tmp/detr_pvt_s_8x2_50ep_coco.py)        | [log](https://drive.google.com/file/d/1svBJbh8sHK2Ea0ORY5g2PxVr_O16AI0i/view?usp=sharing) & [model](https://drive.google.com/file/d/1rIf2qUEvaeV2ZMzhVyiXxEplE0bCi3Jv/view?usp=sharing) |
 
 
 ## Evaluation
