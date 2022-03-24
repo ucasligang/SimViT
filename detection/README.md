@@ -63,7 +63,7 @@ Prepare COCO according to the guidelines in [MMDetection v2.13.0](https://github
 |------------|----------|-------------|:-------:|:---:|:------:|------------------------------------------------------|----------|
 | RetinaNet  | SimViT-Small | ImageNet-1K |    3x   |  No |  46.3 |  [config](configs/tmp/retinanet_pvt_v2_b0_fpn_1x_coco.py) | [log](https://drive.google.com/file/d/1190iSH3oas_71DPEVjMK9JTn59RYdF3T/view?usp=sharing) & [model](https://drive.google.com/file/d/1K6OkU3CYVglnLSDSvsY8HpDcISB6eKzM/view?usp=sharing) |
 | ATSS| SimViT-Small | ImageNet-1K |    3x   |  No | 49.6  | [config](configs/tmp/atss_simvit_small_fpn_3x_mstrain_fp16_coco.py) | [log](https://drive.google.com/file/d/1WhOL4_QgEv5QFnziqow3ntvW44uol5mE/view?usp=sharing) & [model](https://drive.google.com/file/d/1TgSz2516yJUdYTiEM4VQSxv9rZt1VtEa/view?usp=sharing) |
-|GFL | SimViT-Small | ImageNet-1K |    3x   |  No |  49.9 | [config](configs/tmp/mask_rcnn_pvt_v2_b5_fpn_1x_coco.py) | [log](https://drive.google.com/file/d/19LN-8TWsrVKsF5aBzXiqKva5mQrAusDw/view?usp=sharing) & [model](https://drive.google.com/file/d/1BvI5XXaGbv3tbLrXbVQ5K45gFVEHbBGX/view?usp=sharing) |
+|GFL | SimViT-Small | ImageNet-1K |    3x   |  No |  49.9 | [config](configs/tmp/gfl_capt_small_fpn_3x_mstrain_fp16.py) | [log](https://drive.google.com/file/d/10IdeyRhK3wq0b1lrOsT2QbxofB_JHlwC/view?usp=sharing) & [model](https://drive.google.com/file/d/16VFQT59XuJhLL0VBw2Za_pUMDHK8zPlr/view?usp=sharing) |
 
 
 
