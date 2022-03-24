@@ -6,9 +6,6 @@ Our code references the [PVT](https://github.com/whai362/PVT), thanks a lot for 
 <div align="center">
   <img width="400", src="https://user-images.githubusercontent.com/46208141/159926395-496a4b1e-489a-48d4-9fc1-9c8a038a23ed.png">
 </div>
-<p align="center">
-  The image is from Transformers: Revenge of the Fallen.
-</p>
 
 For details see [SimViT: Exploring a Simple Vision Transformer with sliding windows](https://arxiv.org/pdf/2112.13085.pdf). 
 
