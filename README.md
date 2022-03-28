@@ -24,4 +24,4 @@ SimViT
 
 ## Contact
 
-This repo is currently maintained by Gang Li([@ucasligang](https://github.com/ucasligang)) and Di Xu([@HanielF](https://github.com/HanielF)).
+This repo is currently maintained by Gang Li([@ucasligang](https://github.com/ucasligang)).
