@@ -1,6 +1,6 @@
 # SimViT
 This is a official repository of SimViT.
-We will open our models and codes about object detection and semantic segmentation soon.
+
 Our code references the [PVT](https://github.com/whai362/PVT), thanks a lot for their outstanding work!
 For details see [SimViT: Exploring a Simple Vision Transformer with sliding windows](https://arxiv.org/pdf/2112.13085.pdf). 
 <div align="center">
