@@ -13,13 +13,13 @@ If you use this code for a paper, please cite:
 
 SimViT
 ```
-@misc{li2021simvit,
-      title={SimViT: Exploring a Simple Vision Transformer with sliding windows}, 
-      author={Gang Li and Di Xu and Xing Cheng and Lingyu Si and Changwen Zheng},
-      year={2021},
-      eprint={2112.13085},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+@inproceedings{li2022simvit,
+  title={Simvit: Exploring a simple vision transformer with sliding windows},
+  author={Li, Gang and Xu, Di and Cheng, Xing and Si, Lingyu and Zheng, Changwen},
+  booktitle={2022 IEEE International Conference on Multimedia and Expo (ICME)},
+  pages={1--6},
+  year={2022},
+  organization={IEEE}
 }
 ```
 
