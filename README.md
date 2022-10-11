@@ -1,4 +1,5 @@
 # SimViT
+Paper accepted at ICME 2022.
 This is a official repository of SimViT.
 
 Our code references the [PVT](https://github.com/whai362/PVT), thanks a lot for their outstanding work!
